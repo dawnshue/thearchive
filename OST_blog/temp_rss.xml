@@ -1,0 +1,20 @@
+{% autoescape true %}
+
+<rss version="2.0">
+
+<channel>
+<title>{{ title }}</title>
+<link>{{ blog_url }}</link>
+<description>Metanoia blog by {{ author }}</description>
+
+{% for entry in entries %}
+<item>
+<title>{{ entry.title }}</title>
+<link>http://vds229-ost.appspot.com/entry={{ entry.key.id() }}</link>
+<description>{{ entry.body[0:500] }}</description>
+</item>
+{% endfor %}
+
+</channel>
+</rss>
+{% endautoescape %}
