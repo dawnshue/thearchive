@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% autoescape true %}
+
+<p class="main"><font size="4"><a href="manage/new">+ Start a New Blog</a></font></p>
+
+{% for blog in blogs %}
+<p class="main">
+<br><font size="4"><b><a href="{{ "/user=" ~ blog.author ~ "/blog=" ~ blog.name }}">{{ blog.name }}</a></b></font> | 
+<a href="{{ "/manage/add/" ~ blog.name }}">+ Add an Entry</a>
+<ul>
+{% for entry in entries %}
+{% if entry.blog == blog.name %}
+<li><i>{{ entry.date }}</i>
+ | <a href="{{ "/entry=" ~ entry.key.id() }}">{{ entry.title }}</a>
+ | <a href="{{ "/manage/edit=" ~ entry.key.id() }}">Edit</a>
+ | <a href="{{ "/manage/delete=" ~ entry.key.id() }}">Delete</a>
+</li>
+{% endif %}
+{% endfor %}
+</ul></p>
+{% endfor %}
+<p class="main"><br><br><font size="3"><b>Uploaded Images:</b></font>
+<a href="/upload">+ Upload an Image</a>
+<ul>
+{% for img in images %}
+<li>{{ "http://vds229-ost.appspot.com/img/" ~ img.url }}
+ | <a href="{{ "/img/" ~ img.url }}">View Image</a>
+ | {{ img.date }}
+ | <a href="{{ "/img/delete/" ~ img.key.id() }}">Delete</a>
+{% endfor %}
+</ul></p>
+
+{% endautoescape %}
