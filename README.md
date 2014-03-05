@@ -7,7 +7,7 @@ Old code from assignments done for various classes... I'd advise programmers to 
 ###Projects:
 (in order of completion)
 
-**Metanoia:** a blog application written for Open Source Tools as my final project.
+**Metanoia:** a blog application written for Open Source Tools as my final project. Website accessible at: http://vds229-OST.appspot.com
 - OST_blog folder
 
 **Operating Systems HW#4:** a simulated I/O scheduler implemented in C++.
