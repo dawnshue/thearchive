@@ -1,0 +1,26 @@
+{% autoescape true %}
+
+<p class="main">
+<br><font size="6" color=#98AFC7><b>{{ heading }}</b></font>
+</p>
+{% for entry in entries %}
+<p class="narrow"><br><b><font size="4">
+<a href="{{ "/entry=" ~ entry.key.id() }}">
+{{ entry.title }}
+</a></font></b> by <u><a href="{{ "/user=" ~ entry.author }}">{{ entry.author }}</a></u>
+<br>in <b><a href="{{ "/user=" ~ entry.author ~ "/blog=" ~ entry.blog }}">{{ entry.blog }}</a></b> at <i>{{ entry.date.strftime('%Y-%m-%d %H:%M') }}</i> 
+{% if entry.date.strftime('%Y-%m-%d %H:%M') < entry.edit.strftime('%Y-%m-%d %H:%M') %}
+last updated <i>{{ entry.edit.strftime('%Y-%m-%d %H:%M') }}</i>
+{% endif %}
+<br><font color=#4863A0>{{ entry.body[0:500] }}</font>
+<br>[ <a href="{{ "/entry=" ~ entry.key.id() }}">Permalink</a> ] | <b>Tagged:</b> 
+{% for tag in entry.tags %}
+#<a href="{{ "/tagged/" ~ tag }}">{{ tag }}</a> {% endfor %}
+</p>
+{% endfor %}
+
+<p class="main">
+<br><b><a href="{{ older_url }}">------Older Posts</b></a>
+</p>
+
+{% endautoescape %}
