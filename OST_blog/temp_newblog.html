@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% autoescape true %}
+
+<form action="{{ action_url }}" enctype="multipart/form-data" method="post">
+<table width="100%" cellspacing="5">
+
+{% if new_blog %}
+<tr>
+<th colspan="2">
+* Note: if blog name is the same as an existing blog you own, the entry will be added to that blog instead.
+</th>
+</tr>
+{% endif %}
+
+<tr>
+<th>
+<b>Blog Name:</b>
+</th>
+<th>
+{% if new_blog %}
+<input type="text" value="{{ blog_name }}" name="blogname" style="width: 600px; padding: 2px; border: 1px solid black" />
+{% else %}
+<b><font size="4" color=#666699>{{ blog_name }}</font></b></p>
+<input type="hidden" value="{{ blog_name }}" name="blogname">
+{% endif %}
+</th>
+</tr>
+
+<tr>
+<th>
+<b>Title:</b>
+</th>
+<th>
+<input type="text" value="{{ entry_title }}" name="btitle" style="width: 600px; padding: 2px; border: 1px solid black"/>
+</th>
+</tr>
+
+
+<tr>
+<th>
+<b>Entry:</b>
+</th>
+<th>
+<textarea name="bcontent" rows=20 cols=80>{{ entry_content }}</textarea>
+</th>
+</tr>
+
+<tr>
+<th>
+<b>Tags:</b>
+</th>
+<th>
+<input type="text" value="{{ entry_tags }}" name="btags" style="width: 600px; padding: 2px; border: 1px solid black"/>
+</th>
+</tr>
+
+<tr>
+<th></th>
+<th>
+<input type=submit value="{{ submit_word }}">
+</th>
+</tr>
+</table>
+</form>
+</p>
+{% endautoescape %}
