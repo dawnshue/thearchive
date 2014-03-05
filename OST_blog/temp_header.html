@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+<head>
+<style>
+h1 {text-align:center;
+	color:rgb(160,160,160);
+	font-family:fantasy, Times, Sans-serif;}
+h5 {text-align:center;
+	color:rgb(184,184,184);
+	font-style:italic;
+	font-family:"Book Antiqua", Times, Sans-serif;}
+p.user {text-align:center;
+	font-size:14px;}
+p.bar {text-align:center;
+	font-size:14px;}
+p.main, ul, li, table {
+	text-align:left;
+	font-size:13px;
+	margin:0px 100px;
+	}
+form, input, textarea {
+	text-align:left;
+	font-size:13px;
+	}
+p.centered{
+	text-align:center;
+	font-size:12px;
+	margin:0px 100px;
+	}
+p.narrow {
+	text-align:left;
+	font-size:13px;
+	margin:0px 150px;
+	}
+A:link {text-decoration: none}
+A:visited {text-decoration: none; color:#104E8B;}
+A:active {text-decoration: none}
+A:hover {text-decoration: none; color:#9999FF;}
+
+.container {
+	width: 500px;
+	clear: both;
+	}
+.container input {
+	width: 100%;
+	clear: both;
+	}
+</style>
+</head>
+<body>
+
+
+  <h1>M E T A N O I A</h1>
+  <h5>product of a 3-day programming marathon.</h5>
+
+
+  <p class="user"><a href="/">Home</a></br>
+<br>{{ welcome }} | <a href="{{ login_url }}">{{ login_text }}</a></p>
+
+  {% if user_on %}
+  <p class="bar"><a href="/manage">Manage Your Blog</a></p>
+  {% endif %}
+
+
+{% endautoescape %}
