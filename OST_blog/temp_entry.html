@@ -1,0 +1,24 @@
+{% autoescape true %}
+
+<p class="main">
+<br><font size="6" color=#98AFC7><b>{{ heading }}</b></font>
+</p>
+<p class="narrow"><br><font size="4">
+by <b><u><a href="{{ "/user=" ~ entry.author }}">{{ entry.author }}</a></u></b> 
+in <b><a href="{{ "/user=" ~ entry.author ~ "/blog=" ~ entry.blog }}">{{ entry.blog }}</a></b>
+<br><b>Date:</b> <i>{{ entry.date.strftime('%Y-%m-%d %H:%M') }}</i>
+{% if entry.date.strftime('%Y-%m-%d %H:%M') < entry.edit.strftime('%Y-%m-%d %H:%M') %}
+ (modified: <i>{{ entry.edit.strftime('%Y-%m-%d %H:%M') }}</i>)
+{% endif %}
+<br><b>Tagged:</b> 
+{% for tag in entry.tags %}
+#<a href="{{ "/tagged/" ~ tag }}">{{ tag }}</a> {% endfor %}
+</font>
+
+<br><br><font color=#4863A0>
+{% endautoescape %}
+{{ entry.body|safe }}
+{% autoescape true %}
+</p>
+
+{% endautoescape %}
