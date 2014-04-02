@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- *
+ * NYU Programming Team Entry Problems 5 - Nuts
  * @author Vangie
  */
 public class Nuts {
