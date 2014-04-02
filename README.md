@@ -1,7 +1,7 @@
 prettymessy
 ===========
 
-Old code from assignments done for various classes... I'd advise programmers to stay away, there is a high probability it will blind you. But yes, all code written by myself.
+Some code from assignments done for various classes... I'd advise programmers to stay away, there is a high probability it will blind you. But yes, all code written by myself.
 
 ===========
 ###Projects:
