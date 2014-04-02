@@ -7,6 +7,8 @@ Old code from assignments done for various classes... I'd advise programmers to 
 ###Projects:
 (in order of completion)
 
+**NYU-PT:** a compilation of solutions I wrote for some of the NYU Programming Team problems.
+
 **Metanoia:** a blog application written for Open Source Tools as my final project. Website accessible at: http://vds229-OST.appspot.com
 - OST_blog folder
 
