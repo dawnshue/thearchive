@@ -1,5 +1,5 @@
 use "subss.sml";
-(* Tests subset functionality of subss.sml *)
+(* Tests subset functionality of subss.sml with int type *)
 
 fun eql (a, b) =
 	if (a - b) = 0
