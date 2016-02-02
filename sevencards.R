@@ -7,5 +7,7 @@ N = 21 #target score
 score = 0 #current score
 cardsdrawn = 0 #number of cards drawn so far?
 while(score < N) {
-  sample(1:7)
+  whichcard = sample(1:numcards,1)
+  score = score + cardvalues[whichcard]
+  cardsdrawn = cardsdrawn + 1
 }
